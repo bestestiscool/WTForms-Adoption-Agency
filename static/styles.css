@@ -1,0 +1,61 @@
+.pets-container {
+  display: flex;
+  flex-direction: column; /* Stack .pet-row divs vertically */
+}
+
+.pet-row {
+  display: flex;
+  align-items: center; /* Align the image and details vertically */
+  margin-bottom: 20px; /* Space between each pet's row */
+}
+
+.pet-image-container {
+  flex: 0 0 100px; /* Do not grow or shrink, set fixed width for image container */
+  margin-right: 15px; /* Space between image and details */
+}
+
+.pet-image {
+  width: 100%; /* Make image fill the container */
+  height: auto;
+}
+
+.pet-details-container {
+  flex: 1; /* Allow the details to fill the remaining space */
+}
+
+.edit-link {
+  /* Style for your edit link */
+}
+
+.add_a_pet {
+  /* Your existing styles for the .add_a_pet button */
+  display: block; /* Make sure it's block to take up its own line */
+  margin-top: 20px; /* Space before the button */
+}
+
+.add_a_pet{
+  padding: 10px 15px;
+  background-color: rgb(14, 209, 49);
+  color: #333;
+  border: 2px solid #333; /* Adjust color as needed */
+  border-radius: 5px; /* Rounded corners */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+
+
+.add_a_pet:hover {
+  background-color: #083c8a; /* Dark background on hover */
+  color: white; /* Light text on hover */
+}
+
+.pet_image {
+  width: 20%; /* Make image fill the container */
+  height: auto;
+}

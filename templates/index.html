@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption Agency</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="pets-container"> <!-- This container will hold all pet rows -->
+        {% for pet in pets %}
+        <div class="pet-row"> <!-- Each pet-row will be a row with pet details -->
+            <div class="pet-image-container">
+                {% if pet.photo_url %}
+                <img src="{{ pet.photo_url }}" alt="{{ pet.name }}" class="pet-image">
+                {% endif %}
+            </div>
+            <div class="pet-details-container">
+                <h2>{{ pet.name }}</h2>
+                <p>{{ pet.species }}</p>
+                {% if pet.available %}
+                    <strong>Available</strong>
+                {% else %}
+                    Not Available
+                {% endif %}
+                <a href="{{ url_for('edit_pet', pet_id=pet.id) }}" class="edit-link">Edit</a>
+            </div>
+        </div>
+        {% else %}
+            <p>No pets available.</p>
+        {% endfor %}
+    </div>
+    <a href="{{ url_for('add_pet') }}" class="add_a_pet">Add a New Pet</a>
+</body>
+</html>

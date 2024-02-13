@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Pet</title>
+</head>
+<body>
+    <form method="POST" action="{{ url_for('add_pet') }}">
+        {{ form.hidden_tag() }}
+        {{ form.name.label }} {{ form.name }}<br>
+        {{ form.species.label }} {{ form.species }}<br>
+        {{ form.photo_url.label }} {{ form.photo_url }}<br>
+        {{ form.age.label }} {{ form.age }}<br>
+        {{ form.notes.label }} {{ form.notes }}<br>
+        {{ form.submit() }}
+    </form>
+</body>
+</html>
